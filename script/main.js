@@ -270,3 +270,36 @@ const animationTimeline = () => {
         tl.restart();
     });
 }
+
+function createHeart() {
+  const heart = document.createElement("div");
+  heart.classList.add("heart");
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.animationDuration = 2 + Math.random() * 3 + "s"; // rơi nhanh/chậm
+
+  document.getElementById("heart-container").appendChild(heart);
+
+  setTimeout(() => {
+    heart.remove();
+  }, 5000);
+}
+
+setInterval(createHeart, 300);
+
+function createFallingText() {
+  const textArray = ["❤️", "Chúc mừng", "🎉", "Mãi keo", "💖", "Happy Birthday"];
+  const text = document.createElement("div");
+  text.classList.add("falling-text");
+  text.innerText = textArray[Math.floor(Math.random() * textArray.length)];
+
+  text.style.left = Math.random() * 100 + "vw";
+  text.style.animationDuration = 3 + Math.random() * 2 + "s";
+
+  document.getElementById("text-fall-container").appendChild(text);
+
+  setTimeout(() => {
+    text.remove();
+  }, 5000);
+}
+
+setInterval(createFallingText, 400);
