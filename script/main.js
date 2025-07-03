@@ -287,7 +287,7 @@ function createHeart() {
 setInterval(createHeart, 300);
 
 function createFallingText() {
-  const textArray = ["❤️", "Chúc mừng", "🎉", "Mãi keo", "💖", "Happy Birthday"];
+  const textArray = ["❤️", "Chúc mừng", "🎉", "Mãi keo", "💖", "Happy Birthday","Hương Giang"];
   const text = document.createElement("div");
   text.classList.add("falling-text");
   text.innerText = textArray[Math.floor(Math.random() * textArray.length)];
